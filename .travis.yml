@@ -1,14 +1,15 @@
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y pandoc texlive-latex-recommended texlive-fonts-recommended
+  - sudo apt-get install -y pandoc texlive texlive-latex-recommended texlive-fonts-recommended
 
 before_script: 
   - test -e README.md
   - which pandoc
   - pandoc -v
+  - pandoc --help
 
 script: 
-  - pandoc --from=markdown_github --to=latex --output=README.pdf README.md
+  - pandoc --from=markdown --to=latex --output=README.pdf README.md
 
 deploy:
   skip_cleanup: true
