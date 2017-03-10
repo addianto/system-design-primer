@@ -6,7 +6,8 @@ before_script:
   - test -e README.md
   - which pandoc
 
-script: pandoc -f markdown_github -o README.pdf README.md
+script: 
+  - pandoc --from=markdown_github --to=latex --output=README.pdf README.md
 
 deploy:
   skip_cleanup: true
