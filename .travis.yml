@@ -5,6 +5,7 @@ before_install:
 before_script: 
   - test -e README.md
   - which pandoc
+  - pandoc -v
 
 script: 
   - pandoc --from=markdown_github --to=latex --output=README.pdf README.md
