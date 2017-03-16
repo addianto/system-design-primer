@@ -11,7 +11,7 @@ before_script:
   - pandoc --help
 
 script: 
-  - pandoc --from=markdown_github --to=latex --output=README.pdf README.md
+  - pandoc --from=markdown_github --to=latex --latex-engine=xelatex --output=README.pdf README.md
 
 deploy:
   skip_cleanup: true
